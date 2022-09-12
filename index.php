@@ -55,7 +55,8 @@
 </div>
 <div id="search_results">Результат поиска по записям, которые в комменатариях содержат "<span class="word"></span>"
 </div>
-<ul id="results"></ul>
+<br>
+<div id="results"></div>
 <div>
 </body>
 </html>

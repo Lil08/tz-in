@@ -1,13 +1,11 @@
 <?php
-define('DB_DSN', 'mysql:host=mysql-8;dbname=tzin');
-define('DB_User', 'root');
-define('DB_Password', 'root');
+require_once 'db.php';
 
 try {
-    $dbh = new PDO(DB_DSN, DB_User, DB_Password, [PDO::ATTR_PERSISTENT => true]);
+    $dbh = new PDO("mysql:host=" . DB_Host . ";dbname=" . DB_Name, DB_User, DB_Password, [PDO::ATTR_PERSISTENT => true]);
     echo "Подключились\n";
 } catch (Exception $e) {
-    die("Не удалось подключиться: " . $e->getMessage(). PHP_EOL) ;
+    die("Не удалось подключиться: " . $e->getMessage() . PHP_EOL);
 }
 
 $contentPosts = file_get_contents('https://jsonplaceholder.typicode.com/posts');
